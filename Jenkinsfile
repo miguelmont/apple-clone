@@ -1,7 +1,8 @@
 pipeline {
   agent {
-    node {
-      label 'ubuntu-2004-gce'
+    docker {
+      image 'jenkins/ssh-agent:alpine'
+      args '-u root -v /var/bin/jenkins'
     }
 
   }
