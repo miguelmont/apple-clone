@@ -1,8 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'jenkins/ssh-agent:alpine'
-      args '-u root -v /var/bin/jenkins'
+    node {
+      label 'ubuntu-2004-gce'
     }
 
   }
@@ -16,7 +15,7 @@ pipeline {
 
     stage('na') {
       steps {
-        archiveArtifacts(fingerprint: true, artifacts: '*')
+        input(message: 'Deploy to stage?', ok: 'OK', submitter: 'miguelmont')
       }
     }
 
