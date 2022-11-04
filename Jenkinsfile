@@ -13,7 +13,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('na') {
       steps {
         archiveArtifacts(fingerprint: true, artifacts: '*')
       }
