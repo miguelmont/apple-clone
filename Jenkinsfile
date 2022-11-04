@@ -13,11 +13,5 @@ pipeline {
       }
     }
 
-    stage('') {
-      steps {
-        slackSend()
-      }
-    }
-
   }
 }
