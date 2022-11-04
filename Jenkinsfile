@@ -7,9 +7,20 @@ pipeline {
   }
   stages {
     stage('Buzz Buzz') {
-      steps {
-        echo 'hello from blue ocean'
-        sh 'echo \'hello from blue ocean\''
+      parallel {
+        stage('Buzz Buzz') {
+          steps {
+            echo 'hello from blue ocean'
+            sh 'echo \'hello from blue ocean\''
+          }
+        }
+
+        stage('') {
+          steps {
+            sleep 1
+          }
+        }
+
       }
     }
 
